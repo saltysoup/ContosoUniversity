@@ -3,22 +3,28 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
-using System.Net;
-using System.Web;
-using System.Web.Mvc;
+using System.Threading.Tasks;
 using ContosoUniversity.DAL;
 using ContosoUniversity.Models;
 using ContosoUniversity.ViewModels;
 using System.Data.Entity.Infrastructure;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ContosoUniversity.Controllers
 {
     public class InstructorController : Controller
     {
-        private SchoolContext db = new SchoolContext();
+        //private SchoolContext db = new SchoolContext();
+        private SchoolContext db = null;
+
+        public InstructorController(SchoolContext db)
+        {
+            this.db = db;
+        }
+
 
         // GET: Instructor
-        public ActionResult Index(int? id, int? courseID)
+        public async Task<ActionResult> Index(int? id, int? courseID)
         {
             var viewModel = new InstructorIndexData();
 
@@ -56,21 +62,22 @@ namespace ContosoUniversity.Controllers
 
 
         // GET: Instructor/Details/5
-        public ActionResult Details(int? id)
+        public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                
+
             }
             Instructor instructor = db.Instructors.Find(id);
             if (instructor == null)
             {
-                return HttpNotFound();
+                return new NotFoundResult();
             }
             return View(instructor);
         }
 
-        public ActionResult Create()
+        public async Task<ActionResult> Create()
         {
             var instructor = new Instructor();
             instructor.Courses = new List<Course>();
@@ -80,7 +87,7 @@ namespace ContosoUniversity.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "LastName,FirstMidName,HireDate,OfficeAssignment")]Instructor instructor, string[] selectedCourses)
+        public async Task<ActionResult> Create([Bind("LastName,FirstMidName,HireDate,OfficeAssignment")]Instructor instructor, string[] selectedCourses)
         {
             if (selectedCourses != null)
             {
@@ -103,11 +110,11 @@ namespace ContosoUniversity.Controllers
 
 
         // GET: Instructor/Edit/5
-        public ActionResult Edit(int? id)
+        public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return new BadRequestResult();
             }
             Instructor instructor = db.Instructors
                 .Include(i => i.OfficeAssignment)
@@ -117,7 +124,7 @@ namespace ContosoUniversity.Controllers
             PopulateAssignedCourseData(instructor);
             if (instructor == null)
             {
-                return HttpNotFound();
+                return new NotFoundResult();
             }
             return View(instructor);
         }
@@ -143,11 +150,11 @@ namespace ContosoUniversity.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int? id, string[] selectedCourses)
+        public async Task<ActionResult> Edit(int? id, string[] selectedCourses)
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return new BadRequestResult();
             }
             var instructorToUpdate = db.Instructors
                .Include(i => i.OfficeAssignment)
@@ -155,8 +162,7 @@ namespace ContosoUniversity.Controllers
                .Where(i => i.ID == id)
                .Single();
 
-            if (TryUpdateModel(instructorToUpdate, "",
-               new string[] { "LastName", "FirstMidName", "HireDate", "OfficeAssignment" }))
+            if (await TryUpdateModelAsync(instructorToUpdate))
             {
                 try
                 {
@@ -213,16 +219,17 @@ namespace ContosoUniversity.Controllers
 
 
         // GET: Instructor/Delete/5
+        
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return new BadRequestResult();
             }
             Instructor instructor = db.Instructors.Find(id);
             if (instructor == null)
             {
-                return HttpNotFound();
+                return new NotFoundResult();
             }
             return View(instructor);
         }
@@ -230,7 +237,7 @@ namespace ContosoUniversity.Controllers
         // POST: Instructor/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public async Task<ActionResult> DeleteConfirmed(int id)
         {
             Instructor instructor = db.Instructors
               .Include(i => i.OfficeAssignment)

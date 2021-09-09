@@ -4,18 +4,25 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
-using System.Web.Mvc;
+using System.Threading.Tasks;
 using ContosoUniversity.DAL;
 using ContosoUniversity.Models;
-using PagedList;
+using PagedList.Core;
 using System.Data.Entity.Infrastructure;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ContosoUniversity.Controllers
 {
     public class StudentController : Controller
     {
-        private SchoolContext db = new SchoolContext();
+        //private SchoolContext db = new SchoolContext();
+        private SchoolContext db = null;
+
+        public StudentController(SchoolContext db)
+        {
+            this.db = db;
+        }
+
 
         // GET: Student
         public ViewResult Index(string sortOrder, string currentFilter, string searchString, int? page)
@@ -65,22 +72,31 @@ namespace ContosoUniversity.Controllers
 
 
         // GET: Student/Details/5
-        public ActionResult Details(int? id)
+        public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                
+
+
+
+
+
+
+
+
+
             }
             Student student = db.Students.Find(id);
             if (student == null)
             {
-                return HttpNotFound();
+                return new NotFoundResult();
             }
             return View(student);
         }
 
         // GET: Student/Create
-        public ActionResult Create()
+        public async Task<ActionResult> Create()
         {
             return View();
         }
@@ -90,7 +106,7 @@ namespace ContosoUniversity.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "LastName, FirstMidName, EnrollmentDate")]Student student)
+        public async Task<ActionResult> Create([Bind("LastName, FirstMidName, EnrollmentDate")]Student student)
         {
             try
             {
@@ -111,16 +127,16 @@ namespace ContosoUniversity.Controllers
 
 
         // GET: Student/Edit/5
-        public ActionResult Edit(int? id)
+        public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return new BadRequestResult();
             }
             Student student = db.Students.Find(id);
             if (student == null)
             {
-                return HttpNotFound();
+                return new NotFoundResult();
             }
             return View(student);
         }
@@ -130,15 +146,14 @@ namespace ContosoUniversity.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost, ActionName("Edit")]
         [ValidateAntiForgeryToken]
-        public ActionResult EditPost(int? id)
+        public async Task<ActionResult> EditPost(int? id)
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return new BadRequestResult();
             }
             var studentToUpdate = db.Students.Find(id);
-            if (TryUpdateModel(studentToUpdate, "",
-               new string[] { "LastName", "FirstMidName", "EnrollmentDate" }))
+            if (await TryUpdateModelAsync(studentToUpdate))
             {
                 try
                 {
@@ -156,11 +171,12 @@ namespace ContosoUniversity.Controllers
         }
 
         // GET: Student/Delete/5
-        public ActionResult Delete(int? id, bool? saveChangesError = false)
+        
+        public async Task<ActionResult> Delete(int? id, bool? saveChangesError = false)
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return new BadRequestResult();
             }
             if (saveChangesError.GetValueOrDefault())
             {
@@ -169,7 +185,7 @@ namespace ContosoUniversity.Controllers
             Student student = db.Students.Find(id);
             if (student == null)
             {
-                return HttpNotFound();
+                return new NotFoundResult();
             }
             return View(student);
         }
@@ -177,7 +193,8 @@ namespace ContosoUniversity.Controllers
         // POST: Student/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id)
+
+        public async Task<ActionResult> Delete(int id)
         {
             try
             {

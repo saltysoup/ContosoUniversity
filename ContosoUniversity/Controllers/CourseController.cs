@@ -4,20 +4,27 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
-using System.Web.Mvc;
+using System.Threading.Tasks;
 using ContosoUniversity.DAL;
 using ContosoUniversity.Models;
 using System.Data.Entity.Infrastructure;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace ContosoUniversity.Controllers
 {
     public class CourseController : Controller
     {
-        private SchoolContext db = new SchoolContext();
+        //      private SchoolContext db = new SchoolContext();
+        private SchoolContext db = null;
 
+        public CourseController(SchoolContext db)
+        {
+            this.db = db;
+        }
         // GET: Course
-        public ActionResult Index(int? SelectedDepartment)
+
+        public async Task<ActionResult> Index(int? SelectedDepartment)
         {
             var departments = db.Departments.OrderBy(q => q.Name).ToList();
             ViewBag.SelectedDepartment = new SelectList(departments, "DepartmentID", "Name", SelectedDepartment);
@@ -32,22 +39,24 @@ namespace ContosoUniversity.Controllers
         }
 
         // GET: Course/Details/5
-        public ActionResult Details(int? id)
+        public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                
+
+
             }
             Course course = db.Courses.Find(id);
             if (course == null)
             {
-                return HttpNotFound();
+                return new NotFoundResult();
             }
             return View(course);
         }
 
 
-        public ActionResult Create()
+        public async Task<ActionResult> Create()
         {
             PopulateDepartmentsDropDownList();
             return View();
@@ -55,7 +64,7 @@ namespace ContosoUniversity.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CourseID,Title,Credits,DepartmentID")]Course course)
+        public async Task<ActionResult> Create([Bind("CourseID,Title,Credits,DepartmentID")]Course course)
         {
             try
             {
@@ -75,16 +84,21 @@ namespace ContosoUniversity.Controllers
             return View(course);
         }
 
-        public ActionResult Edit(int? id)
+        public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                
+
+
+
+
+
             }
             Course course = db.Courses.Find(id);
             if (course == null)
             {
-                return HttpNotFound();
+                return new NotFoundResult();
             }
             PopulateDepartmentsDropDownList(course.DepartmentID);
             return View(course);
@@ -92,15 +106,14 @@ namespace ContosoUniversity.Controllers
 
         [HttpPost, ActionName("Edit")]
         [ValidateAntiForgeryToken]
-        public ActionResult EditPost(int? id)
+        public async Task<ActionResult> EditPost(int? id)
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                
             }
             var courseToUpdate = db.Courses.Find(id);
-            if (TryUpdateModel(courseToUpdate, "",
-               new string[] { "Title", "Credits", "DepartmentID" }))
+            if (await TryUpdateModelAsync(courseToUpdate))
             {
                 try
                 {
@@ -132,12 +145,12 @@ namespace ContosoUniversity.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return new BadRequestResult();
             }
             Course course = db.Courses.Find(id);
             if (course == null)
             {
-                return HttpNotFound();
+                return new NotFoundResult();
             }
             return View(course);
         }
@@ -145,7 +158,7 @@ namespace ContosoUniversity.Controllers
         // POST: Course/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public async Task<ActionResult> DeleteConfirmed(int? id)
         {
             Course course = db.Courses.Find(id);
             db.Courses.Remove(course);
@@ -153,13 +166,13 @@ namespace ContosoUniversity.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult UpdateCourseCredits()
+        public async Task<ActionResult> UpdateCourseCredits()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult UpdateCourseCredits(int? multiplier)
+        public async Task<ActionResult> UpdateCourseCredits(int? multiplier)
         {
             if (multiplier != null)
             {

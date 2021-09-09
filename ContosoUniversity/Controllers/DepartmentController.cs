@@ -5,20 +5,26 @@ using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Net;
-using System.Web;
-using System.Web.Mvc;
 using ContosoUniversity.DAL;
 using ContosoUniversity.Models;
 using System.Data.Entity.Infrastructure;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace ContosoUniversity.Controllers
 {
     public class DepartmentController : Controller
     {
-        private SchoolContext db = new SchoolContext();
+        //private SchoolContext db = new SchoolContext();
+        private SchoolContext db = null;
 
-        // GET: Department
-        public async Task<ActionResult> Index()
+        public DepartmentController(SchoolContext db)
+        {
+            this.db = db;
+        }
+
+    // GET: Department
+    public async Task<ActionResult> Index()
         {
             var departments = db.Departments.Include(d => d.Administrator);
             return View(await departments.ToListAsync());
@@ -29,7 +35,12 @@ namespace ContosoUniversity.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                
+
+
+
+
+
             }
 
             // Commenting out original code to show how to use a raw SQL query.
@@ -41,13 +52,13 @@ namespace ContosoUniversity.Controllers
 
             if (department == null)
             {
-                return HttpNotFound();
+                return new NotFoundResult();
             }
             return View(department);
         }
 
         // GET: Department/Create
-        public ActionResult Create()
+         public async Task<ActionResult> Create()
         {
             ViewBag.InstructorID = new SelectList(db.Instructors, "ID", "FullName");
             return View();
@@ -58,7 +69,7 @@ namespace ContosoUniversity.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "DepartmentID,Name,Budget,StartDate,InstructorID")] Department department)
+        public async Task<ActionResult> Create([Bind("DepartmentID,Name,Budget,StartDate,InstructorID")] Department department)
         {
             if (ModelState.IsValid)
             {
@@ -76,12 +87,18 @@ namespace ContosoUniversity.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                
+
+
+
+
+
+
             }
             Department department = await db.Departments.FindAsync(id);
             if (department == null)
             {
-                return HttpNotFound();
+                return new NotFoundResult();
             }
             ViewBag.InstructorID = new SelectList(db.Instructors, "ID", "FullName", department.InstructorID);
             return View(department);
@@ -98,21 +115,21 @@ namespace ContosoUniversity.Controllers
 
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return new BadRequestResult();
             }
 
             var departmentToUpdate = await db.Departments.FindAsync(id);
             if (departmentToUpdate == null)
             {
                 Department deletedDepartment = new Department();
-                TryUpdateModel(deletedDepartment, fieldsToBind);
+                TryUpdateModelAsync(deletedDepartment);
                 ModelState.AddModelError(string.Empty,
                     "Unable to save changes. The department was deleted by another user.");
                 ViewBag.InstructorID = new SelectList(db.Instructors, "ID", "FullName", deletedDepartment.InstructorID);
                 return View(deletedDepartment);
             }
 
-            if (TryUpdateModel(departmentToUpdate, fieldsToBind))
+            if (await TryUpdateModelAsync(departmentToUpdate))
             {
                 try
                 {
@@ -170,7 +187,7 @@ namespace ContosoUniversity.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return new BadRequestResult();
             }
             Department department = await db.Departments.FindAsync(id);
             if (department == null)
@@ -179,7 +196,7 @@ namespace ContosoUniversity.Controllers
                 {
                     return RedirectToAction("Index");
                 }
-                return HttpNotFound();
+                return new NotFoundResult();
             }
 
             if (concurrencyError.GetValueOrDefault())

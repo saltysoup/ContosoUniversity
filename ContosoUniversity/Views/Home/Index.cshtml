@@ -4,6 +4,9 @@
 
 <div class="jumbotron">
     <h1>Contoso University</h1>
+    <h3>       
+        @Html.Raw("Running on OS: " + System.Runtime.InteropServices.RuntimeInformation.OSDescription)
+    </h3>
 </div>
 <div class="row">
     <div class="col-md-4">

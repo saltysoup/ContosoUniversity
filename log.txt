@@ -1,0 +1,370 @@
+2021-08-20 12:20:32.305 +00:00 [INF] Loaded 5 extensions
+2021-08-20 12:20:33.437 +00:00 [INF] MSBuild registered from C:\Program Files\dotnet\sdk\5.0.400\
+2021-08-20 12:20:34.264 +00:00 [INF] Found Visual Studio v16.11.31613.86 [C:\Program Files (x86)\Microsoft Visual Studio\2019\Community]
+2021-08-20 12:20:35.793 +00:00 [INF] Initializing upgrade step Select an entrypoint
+2021-08-20 12:20:35.799 +00:00 [INF] Setting entrypoint to only project in solution: C:\ContosoUniversity\ContosoUniversity\ContosoUniversity.csproj
+2021-08-20 12:20:35.807 +00:00 [INF] Initializing upgrade step Select project to upgrade
+2021-08-20 12:20:35.839 +00:00 [INF] Initializing upgrade step Back up project
+2021-08-20 12:20:35.957 +00:00 [INF] Applying upgrade step Back up project
+2021-08-20 12:20:35.966 +00:00 [INF] Backing up C:\ContosoUniversity\ContosoUniversity to C:\ContosoUniversity.backup\ContosoUniversity
+2021-08-20 12:20:39.111 +00:00 [INF] Project backed up to C:\ContosoUniversity.backup\ContosoUniversity
+2021-08-20 12:20:39.114 +00:00 [INF] Upgrade step Back up project applied successfully
+2021-08-20 12:20:41.170 +00:00 [INF] Initializing upgrade step Convert project file to SDK style
+2021-08-20 12:20:41.202 +00:00 [INF] Applying upgrade step Convert project file to SDK style
+2021-08-20 12:20:41.206 +00:00 [INF] Converting project file format with try-convert, version 0.9.232202
+2021-08-20 12:20:41.872 +00:00 [INF] [dotnet] C:\ContosoUniversity\ContosoUniversity\ContosoUniversity.csproj contains a reference to System.Web, which is not supported on .NET Core. You may have significant work ahead of you to fully port this project.
+2021-08-20 12:20:41.876 +00:00 [INF] [dotnet] 'C:\ContosoUniversity\ContosoUniversity\ContosoUniversity.csproj' is a legacy web project and/or references System.Web. Legacy Web projects and System.Web are unsupported on .NET Core. You will need to rewrite your application or find a way to not depend on System.Web to convert this project.
+2021-08-20 12:20:45.467 +00:00 [INF] [dotnet] Conversion complete!
+2021-08-20 12:20:45.978 +00:00 [INF] Project file converted successfully! The project may require additional changes to build successfully against the new .NET target.
+2021-08-20 12:20:48.101 +00:00 [INF] Upgrade step Convert project file to SDK style applied successfully
+2021-08-20 12:20:50.310 +00:00 [INF] Initializing upgrade step Clean up NuGet package references
+2021-08-20 12:20:52.082 +00:00 [INF] Marking package Antlr for removal because it appears to be a transitive dependency
+2021-08-20 12:20:52.097 +00:00 [INF] Marking package PagedList for removal because it appears to be a transitive dependency
+2021-08-20 12:20:52.112 +00:00 [INF] Marking assembly reference System.Configuration for removal based on package mapping configuration System.Configuration
+2021-08-20 12:20:52.117 +00:00 [INF] Adding package System.Configuration.ConfigurationManager based on package mapping configuration System.Configuration
+2021-08-20 12:20:54.141 +00:00 [WRN] No version of System.Configuration.ConfigurationManager found that supports ["net45"]; leaving unchanged
+2021-08-20 12:20:54.929 +00:00 [INF] Reference to .NET Upgrade Assistant analyzer package (Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, version 0.2.241603) needs added
+2021-08-20 12:20:54.942 +00:00 [INF] References to be removed: Operation { Item = System.Configuration, OperationDetails = OperationDetails { Risk = Medium, Details = System.Collections.Generic.List`1[System.String] } }
+2021-08-20 12:20:54.944 +00:00 [INF] Packages to be removed: Operation { Item = Antlr, Version=3.4.1.9004, OperationDetails = OperationDetails { Risk = None, Details = System.Linq.EmptyPartition`1[System.String] } }
+Operation { Item = PagedList, Version=1.17.0.0, OperationDetails = OperationDetails { Risk = None, Details = System.Linq.EmptyPartition`1[System.String] } }
+2021-08-20 12:20:54.945 +00:00 [INF] Packages to be added: Operation { Item = System.Configuration.ConfigurationManager, Version=5.0.0, OperationDetails = OperationDetails { Risk = None, Details = System.Linq.EmptyPartition`1[System.String] } }
+Operation { Item = Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, Version=0.2.241603, OperationDetails = OperationDetails { Risk = None, Details = System.Linq.EmptyPartition`1[System.String] } }
+2021-08-20 12:20:55.035 +00:00 [INF] Applying upgrade step Clean up NuGet package references
+2021-08-20 12:20:55.040 +00:00 [INF] Removing outdated assembly reference: System.Configuration
+2021-08-20 12:20:55.043 +00:00 [INF] Removing outdated package reference: Antlr, Version=3.4.1.9004
+2021-08-20 12:20:55.045 +00:00 [INF] Removing outdated package reference: PagedList, Version=1.17.0.0
+2021-08-20 12:20:55.048 +00:00 [INF] Adding package reference: System.Configuration.ConfigurationManager, Version=5.0.0
+2021-08-20 12:20:55.051 +00:00 [INF] Adding package reference: Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, Version=0.2.241603
+2021-08-20 12:20:58.319 +00:00 [WRN] No version of System.Configuration.ConfigurationManager found that supports ["net45"]; leaving unchanged
+2021-08-20 12:20:58.324 +00:00 [INF] Upgrade step Clean up NuGet package references applied successfully
+2021-08-20 12:21:00.379 +00:00 [INF] Initializing upgrade step Update TFM
+2021-08-20 12:21:00.389 +00:00 [INF] Recommending executable TFM net5.0 because the project builds to an executable
+2021-08-20 12:21:00.393 +00:00 [INF] TFM needs updated to net5.0
+2021-08-20 12:21:00.429 +00:00 [INF] Applying upgrade step Update TFM
+2021-08-20 12:21:00.440 +00:00 [INF] Recommending executable TFM net5.0 because the project builds to an executable
+2021-08-20 12:21:04.044 +00:00 [INF] Updated TFM to net5.0
+2021-08-20 12:21:04.048 +00:00 [INF] Upgrade step Update TFM applied successfully
+2021-08-20 12:21:06.281 +00:00 [INF] Initializing upgrade step Update NuGet Packages
+2021-08-20 12:21:08.321 +00:00 [INF] Marking package WebGrease for removal based on package mapping configuration WebGrease
+2021-08-20 12:21:09.092 +00:00 [INF] Marking package EntityFramework, Version=6.1.1 for removal because it doesn't support the target framework but a newer version (6.4.4) does
+2021-08-20 12:21:09.928 +00:00 [INF] Marking package Newtonsoft.Json, Version=6.0.3 for removal because it doesn't support the target framework but a newer version (6.0.8) does
+2021-08-20 12:21:11.483 +00:00 [WRN] No version of PagedList.Mvc found that supports ["net5.0"]; leaving unchanged
+2021-08-20 12:21:12.816 +00:00 [INF] Marking package Newtonsoft.Json, Version=6.0.8 for removal because it doesn't support the target framework but a newer version (7.0.1) does
+2021-08-20 12:21:12.819 +00:00 [WRN] Package Newtonsoft.Json needs to be upgraded across major versions (6.0.8 -> 7.0.1) which may introduce breaking changes
+2021-08-20 12:21:12.820 +00:00 [FTL] Package analysis failed (analyzer Target compatibility reference analyzer: Collection was modified; enumeration operation may not execute.
+2021-08-20 12:21:13.644 +00:00 [INF] Reference to Newtonsoft package (Microsoft.AspNetCore.Mvc.NewtonsoftJson, version 5.0.9) needs added
+2021-08-20 12:21:13.688 +00:00 [INF] Applying upgrade step Update NuGet Packages
+2021-08-20 12:21:13.690 +00:00 [INF] Removing outdated package reference: EntityFramework, Version=6.1.1
+2021-08-20 12:21:13.691 +00:00 [INF] Removing outdated package reference: Newtonsoft.Json, Version=6.0.3
+2021-08-20 12:21:13.693 +00:00 [INF] Removing outdated package reference: WebGrease, Version=1.5.2
+2021-08-20 12:21:13.696 +00:00 [INF] Adding package reference: EntityFramework, Version=6.4.4
+2021-08-20 12:21:13.698 +00:00 [INF] Adding package reference: Newtonsoft.Json, Version=6.0.8
+2021-08-20 12:21:13.699 +00:00 [INF] Adding package reference: Newtonsoft.Json, Version=7.0.1
+2021-08-20 12:21:13.701 +00:00 [INF] Adding package reference: Microsoft.AspNetCore.Mvc.NewtonsoftJson, Version=5.0.9
+2021-08-20 12:21:20.994 +00:00 [INF] Marking package Newtonsoft.Json, Version=6.0.8 for removal because it is referenced elsewhere in the project with a higher version
+2021-08-20 12:21:21.004 +00:00 [INF] Marking package Microsoft.CSharp for removal because it appears to be a transitive dependency
+2021-08-20 12:21:22.599 +00:00 [WRN] No version of PagedList.Mvc found that supports ["net5.0"]; leaving unchanged
+2021-08-20 12:21:23.616 +00:00 [INF] Marking package Newtonsoft.Json, Version=7.0.1 for removal because it doesn't support the target framework but a newer version (8.0.3) does
+2021-08-20 12:21:23.619 +00:00 [WRN] Package Newtonsoft.Json needs to be upgraded across major versions (7.0.1 -> 8.0.3) which may introduce breaking changes
+2021-08-20 12:21:24.073 +00:00 [INF] Marking package Newtonsoft.Json, Version=8.0.3 for removal because it doesn't support the target framework but a newer version (9.0.1) does
+2021-08-20 12:21:24.076 +00:00 [WRN] Package Newtonsoft.Json needs to be upgraded across major versions (8.0.3 -> 9.0.1) which may introduce breaking changes
+2021-08-20 12:21:24.078 +00:00 [FTL] Package analysis failed (analyzer Target compatibility reference analyzer: Collection was modified; enumeration operation may not execute.
+2021-08-20 12:21:24.099 +00:00 [WRN] Upgrade step Update NuGet Packages failed: "Failed": Package analysis failed
+2021-08-20 12:21:24.158 +00:00 [INF] Applying upgrade step Update NuGet Packages
+2021-08-20 12:21:24.159 +00:00 [INF] Removing outdated package reference: Microsoft.CSharp, Version=4.7.0
+2021-08-20 12:21:24.161 +00:00 [INF] Removing outdated package reference: Newtonsoft.Json, Version=6.0.8
+2021-08-20 12:21:24.165 +00:00 [INF] Removing outdated package reference: Newtonsoft.Json, Version=7.0.1
+2021-08-20 12:21:24.168 +00:00 [INF] Adding package reference: Newtonsoft.Json, Version=8.0.3
+2021-08-20 12:21:24.170 +00:00 [INF] Adding package reference: Newtonsoft.Json, Version=9.0.1
+2021-08-20 12:21:27.544 +00:00 [INF] Marking package Newtonsoft.Json, Version=8.0.3 for removal because it is referenced elsewhere in the project with a higher version
+2021-08-20 12:21:29.210 +00:00 [WRN] No version of PagedList.Mvc found that supports ["net5.0"]; leaving unchanged
+2021-08-20 12:21:30.010 +00:00 [INF] Removing outdated package reference: Newtonsoft.Json, Version=8.0.3
+2021-08-20 12:21:38.663 +00:00 [WRN] No version of PagedList.Mvc found that supports ["net5.0"]; leaving unchanged
+2021-08-20 12:21:38.684 +00:00 [INF] Upgrade step Update NuGet Packages applied successfully
+2021-08-20 12:21:40.807 +00:00 [INF] Initializing upgrade step Add template files
+2021-08-20 12:21:40.832 +00:00 [INF] 4 expected template items needed
+2021-08-20 12:21:40.886 +00:00 [INF] Applying upgrade step Add template files
+2021-08-20 12:21:40.912 +00:00 [INF] Added template file Program.cs
+2021-08-20 12:21:40.925 +00:00 [INF] Added template file Startup.cs
+2021-08-20 12:21:40.938 +00:00 [INF] Added template file appsettings.json
+2021-08-20 12:21:40.947 +00:00 [INF] Added template file appsettings.Development.json
+2021-08-20 12:21:41.834 +00:00 [INF] 4 template items added
+2021-08-20 12:21:41.837 +00:00 [INF] Upgrade step Add template files applied successfully
+2021-08-20 12:21:44.107 +00:00 [INF] Initializing upgrade step Upgrade app config files
+2021-08-20 12:21:44.150 +00:00 [INF] Found 4 app settings for upgrade: webpages:Version, webpages:Enabled, ClientValidationEnabled, UnobtrusiveJavaScriptEnabled
+2021-08-20 12:21:44.156 +00:00 [INF] Found 0 connection strings for upgrade: 
+2021-08-20 12:21:44.161 +00:00 [INF] 1 web page namespace imports need upgraded: ContosoUniversity
+2021-08-20 12:21:44.224 +00:00 [INF] Applying upgrade step Convert Application Settings
+2021-08-20 12:21:44.240 +00:00 [INF] Upgrade step Convert Application Settings applied successfully
+2021-08-20 12:21:46.390 +00:00 [INF] Applying upgrade step Convert system.web.webPages.razor/pages/namespaces
+2021-08-20 12:21:46.394 +00:00 [INF] View imports written to C:\ContosoUniversity\ContosoUniversity\Views\_ViewImports.cshtml
+2021-08-20 12:21:46.396 +00:00 [INF] Upgrade step Convert system.web.webPages.razor/pages/namespaces applied successfully
+2021-08-20 12:21:46.399 +00:00 [INF] Applying upgrade step Upgrade app config files
+2021-08-20 12:21:46.401 +00:00 [INF] Upgrade step Upgrade app config files applied successfully
+2021-08-20 12:21:48.498 +00:00 [INF] Initializing upgrade step Update Razor files
+2021-08-20 12:21:54.222 +00:00 [INF] Identified 0 diagnostics in Razor files in project ContosoUniversity
+2021-08-20 12:21:54.230 +00:00 [INF] Found @helper functions in 0 documents
+2021-08-20 12:21:54.237 +00:00 [INF] Initializing upgrade step Update source code
+2021-08-20 12:21:54.244 +00:00 [INF] Running analyzers on ContosoUniversity
+2021-08-20 12:21:55.281 +00:00 [INF] Identified 85 diagnostics in project ContosoUniversity
+2021-08-20 12:21:55.360 +00:00 [INF] Applying upgrade step Apply fix for UA0001: ASP.NET Core projects should not reference ASP.NET namespaces
+2021-08-20 12:21:55.638 +00:00 [INF] Diagnostic UA0001 fixed in C:\ContosoUniversity\ContosoUniversity\App_Start\BundleConfig.cs
+2021-08-20 12:21:55.664 +00:00 [INF] Diagnostic UA0001 fixed in C:\ContosoUniversity\ContosoUniversity\App_Start\FilterConfig.cs
+2021-08-20 12:21:55.671 +00:00 [INF] Diagnostic UA0001 fixed in C:\ContosoUniversity\ContosoUniversity\App_Start\RouteConfig.cs
+2021-08-20 12:21:55.678 +00:00 [INF] Diagnostic UA0001 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\CourseController.cs
+2021-08-20 12:21:55.686 +00:00 [INF] Diagnostic UA0001 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\DepartmentController.cs
+2021-08-20 12:21:55.694 +00:00 [INF] Diagnostic UA0001 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\HomeController.cs
+2021-08-20 12:21:55.700 +00:00 [INF] Diagnostic UA0001 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\InstructorController.cs
+2021-08-20 12:21:55.708 +00:00 [INF] Diagnostic UA0001 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\StudentController.cs
+2021-08-20 12:21:55.716 +00:00 [INF] Diagnostic UA0001 fixed in C:\ContosoUniversity\ContosoUniversity\DAL\SchoolInitializer.cs
+2021-08-20 12:21:55.724 +00:00 [INF] Diagnostic UA0001 fixed in C:\ContosoUniversity\ContosoUniversity\Global.asax.cs
+2021-08-20 12:21:55.727 +00:00 [INF] Running analyzers on ContosoUniversity
+2021-08-20 12:21:56.553 +00:00 [INF] Identified 75 diagnostics in project ContosoUniversity
+2021-08-20 12:21:56.562 +00:00 [INF] Diagnostic UA0001 fixed in C:\ContosoUniversity\ContosoUniversity\App_Start\BundleConfig.cs
+2021-08-20 12:21:56.568 +00:00 [INF] Diagnostic UA0001 fixed in C:\ContosoUniversity\ContosoUniversity\App_Start\FilterConfig.cs
+2021-08-20 12:21:56.575 +00:00 [INF] Diagnostic UA0001 fixed in C:\ContosoUniversity\ContosoUniversity\App_Start\RouteConfig.cs
+2021-08-20 12:21:56.582 +00:00 [INF] Diagnostic UA0001 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\CourseController.cs
+2021-08-20 12:21:56.589 +00:00 [INF] Diagnostic UA0001 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\DepartmentController.cs
+2021-08-20 12:21:56.596 +00:00 [INF] Diagnostic UA0001 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\HomeController.cs
+2021-08-20 12:21:56.604 +00:00 [INF] Diagnostic UA0001 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\InstructorController.cs
+2021-08-20 12:21:56.610 +00:00 [INF] Diagnostic UA0001 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\StudentController.cs
+2021-08-20 12:21:56.616 +00:00 [INF] Diagnostic UA0001 fixed in C:\ContosoUniversity\ContosoUniversity\Global.asax.cs
+2021-08-20 12:21:56.619 +00:00 [INF] Running analyzers on ContosoUniversity
+2021-08-20 12:21:57.514 +00:00 [INF] Identified 66 diagnostics in project ContosoUniversity
+2021-08-20 12:21:57.523 +00:00 [INF] Diagnostic UA0001 fixed in C:\ContosoUniversity\ContosoUniversity\App_Start\RouteConfig.cs
+2021-08-20 12:21:57.529 +00:00 [INF] Diagnostic UA0001 fixed in C:\ContosoUniversity\ContosoUniversity\Global.asax.cs
+2021-08-20 12:21:57.532 +00:00 [INF] Running analyzers on ContosoUniversity
+2021-08-20 12:21:58.396 +00:00 [INF] Identified 64 diagnostics in project ContosoUniversity
+2021-08-20 12:21:58.402 +00:00 [INF] Diagnostic UA0001 fixed in C:\ContosoUniversity\ContosoUniversity\Global.asax.cs
+2021-08-20 12:21:58.405 +00:00 [INF] Running analyzers on ContosoUniversity
+2021-08-20 12:21:59.262 +00:00 [INF] Identified 63 diagnostics in project ContosoUniversity
+2021-08-20 12:21:59.264 +00:00 [INF] Upgrade step Apply fix for UA0001: ASP.NET Core projects should not reference ASP.NET namespaces applied successfully
+2021-08-20 12:22:01.422 +00:00 [INF] Applying upgrade step Apply fix for UA0002: Types should be upgraded
+2021-08-20 12:22:01.861 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\CourseController.cs
+2021-08-20 12:22:01.890 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\HomeController.cs
+2021-08-20 12:22:01.954 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\DepartmentController.cs
+2021-08-20 12:22:02.026 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\InstructorController.cs
+2021-08-20 12:22:02.100 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\StudentController.cs
+2021-08-20 12:22:02.103 +00:00 [INF] Running analyzers on ContosoUniversity
+2021-08-20 12:22:02.933 +00:00 [INF] Identified 17 diagnostics in project ContosoUniversity
+2021-08-20 12:22:02.977 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\StudentController.cs
+2021-08-20 12:22:02.997 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\CourseController.cs
+2021-08-20 12:22:03.014 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\DepartmentController.cs
+2021-08-20 12:22:03.034 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\InstructorController.cs
+2021-08-20 12:22:03.037 +00:00 [INF] Running analyzers on ContosoUniversity
+2021-08-20 12:22:03.860 +00:00 [INF] Identified 13 diagnostics in project ContosoUniversity
+2021-08-20 12:22:03.874 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\StudentController.cs
+2021-08-20 12:22:03.891 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\InstructorController.cs
+2021-08-20 12:22:03.909 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\DepartmentController.cs
+2021-08-20 12:22:03.929 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\CourseController.cs
+2021-08-20 12:22:03.932 +00:00 [INF] Running analyzers on ContosoUniversity
+2021-08-20 12:22:04.704 +00:00 [INF] Identified 9 diagnostics in project ContosoUniversity
+2021-08-20 12:22:04.719 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\StudentController.cs
+2021-08-20 12:22:04.737 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\CourseController.cs
+2021-08-20 12:22:04.759 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\DepartmentController.cs
+2021-08-20 12:22:04.780 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\InstructorController.cs
+2021-08-20 12:22:04.782 +00:00 [INF] Running analyzers on ContosoUniversity
+2021-08-20 12:22:05.529 +00:00 [INF] Identified 5 diagnostics in project ContosoUniversity
+2021-08-20 12:22:05.543 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\StudentController.cs
+2021-08-20 12:22:05.563 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\InstructorController.cs
+2021-08-20 12:22:05.583 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\DepartmentController.cs
+2021-08-20 12:22:05.602 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\CourseController.cs
+2021-08-20 12:22:05.605 +00:00 [INF] Running analyzers on ContosoUniversity
+2021-08-20 12:22:06.370 +00:00 [INF] Identified 1 diagnostics in project ContosoUniversity
+2021-08-20 12:22:06.373 +00:00 [INF] Upgrade step Apply fix for UA0002: Types should be upgraded applied successfully
+2021-08-20 12:22:08.550 +00:00 [INF] Applying upgrade step Apply fix for UA0010: Attributes should be upgraded
+2021-08-20 12:22:08.553 +00:00 [INF] Upgrade step Apply fix for UA0010: Attributes should be upgraded applied successfully
+2021-08-20 12:22:10.741 +00:00 [INF] Applying upgrade step Update source code
+2021-08-20 12:22:11.734 +00:00 [INF] Source updates complete with 1 diagnostics remaining which require manual updates
+2021-08-20 12:22:11.737 +00:00 [WRN] Manual updates needed to address: UA0013_C@SourceFile(C:\ContosoUniversity\ContosoUniversity\App_Start\BundleConfig.cs[213..229)): Script and style bundling works differently in ASP.NET Core. BundleCollection should be replaced by alternative bundling technologies. https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+2021-08-20 12:22:11.741 +00:00 [INF] Upgrade step Update source code applied successfully
+2021-08-20 12:22:14.023 +00:00 [INF] Initializing upgrade step Move to next project
+2021-08-20 12:22:14.134 +00:00 [INF] Applying upgrade step Move to next project
+2021-08-20 12:22:14.136 +00:00 [INF] Upgrade step Move to next project applied successfully
+2021-08-20 12:22:16.198 +00:00 [INF] Recommending executable TFM net5.0 because the project builds to an executable
+2021-08-20 12:22:16.205 +00:00 [INF] Recommending executable TFM net5.0 because the project builds to an executable
+2021-08-20 12:22:16.212 +00:00 [INF] Recommending executable TFM net5.0 because the project builds to an executable
+2021-08-20 12:22:16.214 +00:00 [INF] Initializing upgrade step Finalize upgrade
+2021-08-20 12:22:16.221 +00:00 [INF] Recommending executable TFM net5.0 because the project builds to an executable
+2021-08-20 12:22:16.225 +00:00 [INF] Applying upgrade step Finalize upgrade
+2021-08-20 12:22:16.227 +00:00 [INF] Upgrade step Finalize upgrade applied successfully
+2021-08-20 12:22:18.291 +00:00 [INF] Upgrade has completed. Please review any changes.
+2021-08-20 12:23:19.427 +00:00 [INF] Loaded 5 extensions
+2021-08-20 12:23:20.626 +00:00 [INF] MSBuild registered from C:\Program Files\dotnet\sdk\5.0.400\
+2021-08-20 12:23:20.876 +00:00 [INF] Found Visual Studio v16.11.31613.86 [C:\Program Files (x86)\Microsoft Visual Studio\2019\Community]
+2021-08-20 12:23:23.530 +00:00 [INF] Recommending executable TFM net5.0 because the project builds to an executable
+2021-08-20 12:23:28.354 +00:00 [WRN] No version of PagedList.Mvc found that supports ["net5.0"]; leaving unchanged
+2021-08-20 12:23:28.399 +00:00 [INF] Running analyzers on ContosoUniversity
+2021-08-20 12:23:31.256 +00:00 [INF] Identified 1 diagnostics in project ContosoUniversity
+2021-08-20 22:55:29.128 +00:00 [INF] Loaded 5 extensions
+2021-08-20 22:55:30.432 +00:00 [INF] MSBuild registered from C:\Program Files\dotnet\sdk\5.0.400\
+2021-08-20 22:55:31.023 +00:00 [INF] Found Visual Studio v16.11.31613.86 [C:\Program Files (x86)\Microsoft Visual Studio\2019\Community]
+2021-08-20 22:55:33.019 +00:00 [INF] Initializing upgrade step Select an entrypoint
+2021-08-20 22:55:33.024 +00:00 [INF] Setting entrypoint to only project in solution: C:\ContosoUniversity\ContosoUniversity\ContosoUniversity.csproj
+2021-08-20 22:55:33.034 +00:00 [INF] Initializing upgrade step Select project to upgrade
+2021-08-20 22:55:33.075 +00:00 [INF] Initializing upgrade step Back up project
+2021-08-20 22:55:33.082 +00:00 [INF] Initializing upgrade step Convert project file to SDK style
+2021-08-20 22:55:33.212 +00:00 [INF] Applying upgrade step Convert project file to SDK style
+2021-08-20 22:55:33.218 +00:00 [INF] Converting project file format with try-convert, version 0.9.232202
+2021-08-20 22:55:34.009 +00:00 [INF] [dotnet] C:\ContosoUniversity\ContosoUniversity\ContosoUniversity.csproj contains a reference to System.Web, which is not supported on .NET Core. You may have significant work ahead of you to fully port this project.
+2021-08-20 22:55:34.014 +00:00 [INF] [dotnet] 'C:\ContosoUniversity\ContosoUniversity\ContosoUniversity.csproj' is a legacy web project and/or references System.Web. Legacy Web projects and System.Web are unsupported on .NET Core. You will need to rewrite your application or find a way to not depend on System.Web to convert this project.
+2021-08-20 22:55:38.734 +00:00 [INF] [dotnet] Conversion complete!
+2021-08-20 22:55:39.544 +00:00 [INF] Project file converted successfully! The project may require additional changes to build successfully against the new .NET target.
+2021-08-20 22:55:42.279 +00:00 [INF] Upgrade step Convert project file to SDK style applied successfully
+2021-08-20 22:55:44.568 +00:00 [INF] Initializing upgrade step Clean up NuGet package references
+2021-08-20 22:55:46.505 +00:00 [INF] Marking package Antlr for removal because it appears to be a transitive dependency
+2021-08-20 22:55:46.522 +00:00 [INF] Marking package PagedList for removal because it appears to be a transitive dependency
+2021-08-20 22:55:46.537 +00:00 [INF] Marking assembly reference System.Configuration for removal based on package mapping configuration System.Configuration
+2021-08-20 22:55:46.542 +00:00 [INF] Adding package System.Configuration.ConfigurationManager based on package mapping configuration System.Configuration
+2021-08-20 22:55:48.739 +00:00 [WRN] No version of System.Configuration.ConfigurationManager found that supports ["net45"]; leaving unchanged
+2021-08-20 22:55:48.962 +00:00 [INF] Reference to .NET Upgrade Assistant analyzer package (Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, version 0.2.241603) needs added
+2021-08-20 22:55:48.978 +00:00 [INF] References to be removed: Operation { Item = System.Configuration, OperationDetails = OperationDetails { Risk = Medium, Details = System.Collections.Generic.List`1[System.String] } }
+2021-08-20 22:55:48.980 +00:00 [INF] Packages to be removed: Operation { Item = Antlr, Version=3.4.1.9004, OperationDetails = OperationDetails { Risk = None, Details = System.Linq.EmptyPartition`1[System.String] } }
+Operation { Item = PagedList, Version=1.17.0.0, OperationDetails = OperationDetails { Risk = None, Details = System.Linq.EmptyPartition`1[System.String] } }
+2021-08-20 22:55:48.983 +00:00 [INF] Packages to be added: Operation { Item = System.Configuration.ConfigurationManager, Version=5.0.0, OperationDetails = OperationDetails { Risk = None, Details = System.Linq.EmptyPartition`1[System.String] } }
+Operation { Item = Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, Version=0.2.241603, OperationDetails = OperationDetails { Risk = None, Details = System.Linq.EmptyPartition`1[System.String] } }
+2021-08-20 22:55:49.032 +00:00 [INF] Applying upgrade step Clean up NuGet package references
+2021-08-20 22:55:49.037 +00:00 [INF] Removing outdated assembly reference: System.Configuration
+2021-08-20 22:55:49.041 +00:00 [INF] Removing outdated package reference: Antlr, Version=3.4.1.9004
+2021-08-20 22:55:49.044 +00:00 [INF] Removing outdated package reference: PagedList, Version=1.17.0.0
+2021-08-20 22:55:49.047 +00:00 [INF] Adding package reference: System.Configuration.ConfigurationManager, Version=5.0.0
+2021-08-20 22:55:49.051 +00:00 [INF] Adding package reference: Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers, Version=0.2.241603
+2021-08-20 22:55:53.662 +00:00 [WRN] No version of System.Configuration.ConfigurationManager found that supports ["net45"]; leaving unchanged
+2021-08-20 22:55:53.669 +00:00 [INF] Upgrade step Clean up NuGet package references applied successfully
+2021-08-20 22:55:55.729 +00:00 [INF] Initializing upgrade step Update TFM
+2021-08-20 22:55:55.739 +00:00 [INF] Recommending executable TFM net5.0 because the project builds to an executable
+2021-08-20 22:55:55.743 +00:00 [INF] TFM needs updated to net5.0
+2021-08-20 22:55:55.816 +00:00 [INF] Applying upgrade step Update TFM
+2021-08-20 22:55:55.821 +00:00 [INF] Recommending executable TFM net5.0 because the project builds to an executable
+2021-08-20 22:55:59.208 +00:00 [INF] Updated TFM to net5.0
+2021-08-20 22:55:59.210 +00:00 [INF] Upgrade step Update TFM applied successfully
+2021-08-20 22:56:01.421 +00:00 [INF] Initializing upgrade step Update NuGet Packages
+2021-08-20 22:56:03.624 +00:00 [INF] Marking package WebGrease for removal based on package mapping configuration WebGrease
+2021-08-20 22:56:04.469 +00:00 [INF] Marking package EntityFramework, Version=6.1.1 for removal because it doesn't support the target framework but a newer version (6.4.4) does
+2021-08-20 22:56:05.277 +00:00 [INF] Marking package Newtonsoft.Json, Version=6.0.3 for removal because it doesn't support the target framework but a newer version (6.0.8) does
+2021-08-20 22:56:06.935 +00:00 [WRN] No version of PagedList.Mvc found that supports ["net5.0"]; leaving unchanged
+2021-08-20 22:56:07.183 +00:00 [INF] Marking package Newtonsoft.Json, Version=6.0.8 for removal because it doesn't support the target framework but a newer version (7.0.1) does
+2021-08-20 22:56:07.186 +00:00 [WRN] Package Newtonsoft.Json needs to be upgraded across major versions (6.0.8 -> 7.0.1) which may introduce breaking changes
+2021-08-20 22:56:07.188 +00:00 [FTL] Package analysis failed (analyzer Target compatibility reference analyzer: Collection was modified; enumeration operation may not execute.
+2021-08-20 22:56:08.001 +00:00 [INF] Reference to Newtonsoft package (Microsoft.AspNetCore.Mvc.NewtonsoftJson, version 5.0.9) needs added
+2021-08-20 22:56:08.053 +00:00 [INF] Applying upgrade step Update NuGet Packages
+2021-08-20 22:56:08.055 +00:00 [INF] Removing outdated package reference: EntityFramework, Version=6.1.1
+2021-08-20 22:56:08.056 +00:00 [INF] Removing outdated package reference: Newtonsoft.Json, Version=6.0.3
+2021-08-20 22:56:08.058 +00:00 [INF] Removing outdated package reference: WebGrease, Version=1.5.2
+2021-08-20 22:56:08.062 +00:00 [INF] Adding package reference: EntityFramework, Version=6.4.4
+2021-08-20 22:56:08.064 +00:00 [INF] Adding package reference: Newtonsoft.Json, Version=6.0.8
+2021-08-20 22:56:08.067 +00:00 [INF] Adding package reference: Newtonsoft.Json, Version=7.0.1
+2021-08-20 22:56:08.070 +00:00 [INF] Adding package reference: Microsoft.AspNetCore.Mvc.NewtonsoftJson, Version=5.0.9
+2021-08-20 22:56:11.644 +00:00 [INF] Marking package Newtonsoft.Json, Version=6.0.8 for removal because it is referenced elsewhere in the project with a higher version
+2021-08-20 22:56:11.660 +00:00 [INF] Marking package Microsoft.CSharp for removal because it appears to be a transitive dependency
+2021-08-20 22:56:13.337 +00:00 [WRN] No version of PagedList.Mvc found that supports ["net5.0"]; leaving unchanged
+2021-08-20 22:56:14.976 +00:00 [INF] Marking package Newtonsoft.Json, Version=7.0.1 for removal because it doesn't support the target framework but a newer version (8.0.3) does
+2021-08-20 22:56:14.979 +00:00 [WRN] Package Newtonsoft.Json needs to be upgraded across major versions (7.0.1 -> 8.0.3) which may introduce breaking changes
+2021-08-20 22:56:15.301 +00:00 [INF] Marking package Newtonsoft.Json, Version=8.0.3 for removal because it doesn't support the target framework but a newer version (9.0.1) does
+2021-08-20 22:56:15.305 +00:00 [WRN] Package Newtonsoft.Json needs to be upgraded across major versions (8.0.3 -> 9.0.1) which may introduce breaking changes
+2021-08-20 22:56:15.308 +00:00 [FTL] Package analysis failed (analyzer Target compatibility reference analyzer: Collection was modified; enumeration operation may not execute.
+2021-08-20 22:56:15.314 +00:00 [WRN] Upgrade step Update NuGet Packages failed: "Failed": Package analysis failed
+2021-08-20 22:56:15.384 +00:00 [INF] Applying upgrade step Update NuGet Packages
+2021-08-20 22:56:15.386 +00:00 [INF] Removing outdated package reference: Microsoft.CSharp, Version=4.7.0
+2021-08-20 22:56:15.388 +00:00 [INF] Removing outdated package reference: Newtonsoft.Json, Version=6.0.8
+2021-08-20 22:56:15.391 +00:00 [INF] Removing outdated package reference: Newtonsoft.Json, Version=7.0.1
+2021-08-20 22:56:15.394 +00:00 [INF] Adding package reference: Newtonsoft.Json, Version=8.0.3
+2021-08-20 22:56:15.396 +00:00 [INF] Adding package reference: Newtonsoft.Json, Version=9.0.1
+2021-08-20 22:56:18.907 +00:00 [INF] Marking package Newtonsoft.Json, Version=8.0.3 for removal because it is referenced elsewhere in the project with a higher version
+2021-08-20 22:56:20.030 +00:00 [WRN] No version of PagedList.Mvc found that supports ["net5.0"]; leaving unchanged
+2021-08-20 22:56:20.046 +00:00 [INF] Removing outdated package reference: Newtonsoft.Json, Version=8.0.3
+2021-08-20 22:56:25.586 +00:00 [WRN] No version of PagedList.Mvc found that supports ["net5.0"]; leaving unchanged
+2021-08-20 22:56:25.603 +00:00 [INF] Upgrade step Update NuGet Packages applied successfully
+2021-08-20 22:56:27.695 +00:00 [INF] Initializing upgrade step Add template files
+2021-08-20 22:56:27.724 +00:00 [INF] 3 expected template items needed
+2021-08-20 22:56:27.792 +00:00 [INF] Applying upgrade step Add template files
+2021-08-20 22:56:27.807 +00:00 [INF] Added template file Program.cs
+2021-08-20 22:56:27.812 +00:00 [INF] Added template file Startup.cs
+2021-08-20 22:56:27.817 +00:00 [INF] Added template file appsettings.json
+2021-08-20 22:56:28.862 +00:00 [INF] 3 template items added
+2021-08-20 22:56:28.866 +00:00 [INF] Upgrade step Add template files applied successfully
+2021-08-20 22:56:31.142 +00:00 [INF] Initializing upgrade step Upgrade app config files
+2021-08-20 22:56:31.183 +00:00 [INF] Found 4 app settings for upgrade: webpages:Version, webpages:Enabled, ClientValidationEnabled, UnobtrusiveJavaScriptEnabled
+2021-08-20 22:56:31.188 +00:00 [INF] Found 1 connection strings for upgrade: SchoolContext
+2021-08-20 22:56:31.195 +00:00 [INF] 1 web page namespace imports need upgraded: ContosoUniversity
+2021-08-20 22:56:31.263 +00:00 [INF] Applying upgrade step Convert Application Settings
+2021-08-20 22:56:31.282 +00:00 [INF] Upgrade step Convert Application Settings applied successfully
+2021-08-20 22:56:33.435 +00:00 [INF] Applying upgrade step Convert Connection Strings
+2021-08-20 22:56:33.443 +00:00 [INF] Upgrade step Convert Connection Strings applied successfully
+2021-08-20 22:56:35.649 +00:00 [INF] Applying upgrade step Convert system.web.webPages.razor/pages/namespaces
+2021-08-20 22:56:35.653 +00:00 [INF] View imports written to C:\ContosoUniversity\ContosoUniversity\Views\_ViewImports.cshtml
+2021-08-20 22:56:35.655 +00:00 [INF] Upgrade step Convert system.web.webPages.razor/pages/namespaces applied successfully
+2021-08-20 22:56:35.660 +00:00 [INF] Applying upgrade step Upgrade app config files
+2021-08-20 22:56:35.663 +00:00 [INF] Upgrade step Upgrade app config files applied successfully
+2021-08-20 22:56:37.757 +00:00 [INF] Initializing upgrade step Update Razor files
+2021-08-20 22:56:47.139 +00:00 [INF] Identified 0 diagnostics in Razor files in project ContosoUniversity
+2021-08-20 22:56:47.149 +00:00 [INF] Found @helper functions in 0 documents
+2021-08-20 22:56:47.156 +00:00 [INF] Initializing upgrade step Update source code
+2021-08-20 22:56:47.163 +00:00 [INF] Running analyzers on ContosoUniversity
+2021-08-20 22:56:48.239 +00:00 [INF] Identified 73 diagnostics in project ContosoUniversity
+2021-08-20 22:56:48.336 +00:00 [INF] Applying upgrade step Apply fix for UA0001: ASP.NET Core projects should not reference ASP.NET namespaces
+2021-08-20 22:56:48.641 +00:00 [INF] Diagnostic UA0001 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\CourseController.cs
+2021-08-20 22:56:48.671 +00:00 [INF] Diagnostic UA0001 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\DepartmentController.cs
+2021-08-20 22:56:48.679 +00:00 [INF] Diagnostic UA0001 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\HomeController.cs
+2021-08-20 22:56:48.690 +00:00 [INF] Diagnostic UA0001 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\InstructorController.cs
+2021-08-20 22:56:48.699 +00:00 [INF] Diagnostic UA0001 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\StudentController.cs
+2021-08-20 22:56:48.707 +00:00 [INF] Diagnostic UA0001 fixed in C:\ContosoUniversity\ContosoUniversity\DAL\SchoolInitializer.cs
+2021-08-20 22:56:48.710 +00:00 [INF] Running analyzers on ContosoUniversity
+2021-08-20 22:56:49.770 +00:00 [INF] Identified 67 diagnostics in project ContosoUniversity
+2021-08-20 22:56:49.783 +00:00 [INF] Diagnostic UA0001 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\CourseController.cs
+2021-08-20 22:56:49.790 +00:00 [INF] Diagnostic UA0001 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\DepartmentController.cs
+2021-08-20 22:56:49.798 +00:00 [INF] Diagnostic UA0001 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\HomeController.cs
+2021-08-20 22:56:49.808 +00:00 [INF] Diagnostic UA0001 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\InstructorController.cs
+2021-08-20 22:56:49.817 +00:00 [INF] Diagnostic UA0001 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\StudentController.cs
+2021-08-20 22:56:49.819 +00:00 [INF] Running analyzers on ContosoUniversity
+2021-08-20 22:56:50.707 +00:00 [INF] Identified 62 diagnostics in project ContosoUniversity
+2021-08-20 22:56:50.710 +00:00 [INF] Upgrade step Apply fix for UA0001: ASP.NET Core projects should not reference ASP.NET namespaces applied successfully
+2021-08-20 22:56:52.880 +00:00 [INF] Applying upgrade step Apply fix for UA0002: Types should be upgraded
+2021-08-20 22:56:53.347 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\CourseController.cs
+2021-08-20 22:56:53.376 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\HomeController.cs
+2021-08-20 22:56:53.442 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\StudentController.cs
+2021-08-20 22:56:53.528 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\InstructorController.cs
+2021-08-20 22:56:53.601 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\DepartmentController.cs
+2021-08-20 22:56:53.605 +00:00 [INF] Running analyzers on ContosoUniversity
+2021-08-20 22:56:54.565 +00:00 [INF] Identified 16 diagnostics in project ContosoUniversity
+2021-08-20 22:56:54.618 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\DepartmentController.cs
+2021-08-20 22:56:54.639 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\CourseController.cs
+2021-08-20 22:56:54.656 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\StudentController.cs
+2021-08-20 22:56:54.679 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\InstructorController.cs
+2021-08-20 22:56:54.683 +00:00 [INF] Running analyzers on ContosoUniversity
+2021-08-20 22:56:55.580 +00:00 [INF] Identified 12 diagnostics in project ContosoUniversity
+2021-08-20 22:56:55.600 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\DepartmentController.cs
+2021-08-20 22:56:55.622 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\StudentController.cs
+2021-08-20 22:56:55.641 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\CourseController.cs
+2021-08-20 22:56:55.662 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\InstructorController.cs
+2021-08-20 22:56:55.666 +00:00 [INF] Running analyzers on ContosoUniversity
+2021-08-20 22:56:56.550 +00:00 [INF] Identified 8 diagnostics in project ContosoUniversity
+2021-08-20 22:56:56.568 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\CourseController.cs
+2021-08-20 22:56:56.584 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\StudentController.cs
+2021-08-20 22:56:56.603 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\DepartmentController.cs
+2021-08-20 22:56:56.628 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\InstructorController.cs
+2021-08-20 22:56:56.631 +00:00 [INF] Running analyzers on ContosoUniversity
+2021-08-20 22:56:57.492 +00:00 [INF] Identified 4 diagnostics in project ContosoUniversity
+2021-08-20 22:56:57.510 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\StudentController.cs
+2021-08-20 22:56:57.530 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\DepartmentController.cs
+2021-08-20 22:56:57.552 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\CourseController.cs
+2021-08-20 22:56:57.572 +00:00 [INF] Diagnostic UA0002 fixed in C:\ContosoUniversity\ContosoUniversity\Controllers\InstructorController.cs
+2021-08-20 22:56:57.575 +00:00 [INF] Running analyzers on ContosoUniversity
+2021-08-20 22:56:58.415 +00:00 [INF] Identified 0 diagnostics in project ContosoUniversity
+2021-08-20 22:56:58.418 +00:00 [INF] Applying upgrade step Update source code
+2021-08-20 22:56:59.550 +00:00 [INF] Upgrade step Update source code applied successfully
+2021-08-20 22:56:59.553 +00:00 [INF] Upgrade step Apply fix for UA0002: Types should be upgraded applied successfully
+2021-08-20 22:57:01.956 +00:00 [INF] Applying upgrade step Apply fix for UA0010: Attributes should be upgraded
+2021-08-20 22:57:01.958 +00:00 [INF] Upgrade step Apply fix for UA0010: Attributes should be upgraded applied successfully
+2021-08-20 22:57:04.084 +00:00 [INF] Initializing upgrade step Move to next project
+2021-08-20 22:57:04.183 +00:00 [INF] Applying upgrade step Move to next project
+2021-08-20 22:57:04.186 +00:00 [INF] Upgrade step Move to next project applied successfully
+2021-08-20 22:57:06.249 +00:00 [INF] Recommending executable TFM net5.0 because the project builds to an executable
+2021-08-20 22:57:06.255 +00:00 [INF] Recommending executable TFM net5.0 because the project builds to an executable
+2021-08-20 22:57:06.260 +00:00 [INF] Recommending executable TFM net5.0 because the project builds to an executable
+2021-08-20 22:57:06.262 +00:00 [INF] Initializing upgrade step Finalize upgrade
+2021-08-20 22:57:06.270 +00:00 [INF] Recommending executable TFM net5.0 because the project builds to an executable
+2021-08-20 22:57:06.272 +00:00 [INF] Applying upgrade step Finalize upgrade
+2021-08-20 22:57:06.276 +00:00 [INF] Upgrade step Finalize upgrade applied successfully
+2021-08-20 22:57:08.335 +00:00 [INF] Upgrade has completed. Please review any changes.
+2021-08-20 22:57:08.346 +00:00 [INF] No state to save
