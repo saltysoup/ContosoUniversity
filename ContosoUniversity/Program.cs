@@ -23,9 +23,23 @@ namespace ContosoUniversity
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
+                .ConfigureAppConfiguration(AddSecretConfig) //cloud run to mount secrets
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+        private static void AddSecretConfig(HostBuilderContext context, 
+        IConfigurationBuilder config) 
+        {
+            const string secretsPath = "secrets";
+
+            var secretFileProvider = context.HostingEnvironment.ContentRootFileProvider
+                .GetDirectoryContents(secretsPath);
+
+            if (secretFileProvider.Exists)
+                foreach (var secret in secretFileProvider)
+                    config.AddJsonFile(secret.PhysicalPath, false, true);
+        }
+    }
     }
 }
