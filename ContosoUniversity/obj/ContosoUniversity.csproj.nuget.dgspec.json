@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\ContosoUniversity\\ContosoUniversity\\ContosoUniversity.csproj": {}
+    "C:\\Users\\ikwak\\Code\\dotnet\\ContosoUniversity\\ContosoUniversity\\ContosoUniversity.csproj": {}
   },
   "projects": {
-    "C:\\ContosoUniversity\\ContosoUniversity\\ContosoUniversity.csproj": {
+    "C:\\Users\\ikwak\\Code\\dotnet\\ContosoUniversity\\ContosoUniversity\\ContosoUniversity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\ContosoUniversity\\ContosoUniversity\\ContosoUniversity.csproj",
+        "projectUniqueName": "C:\\Users\\ikwak\\Code\\dotnet\\ContosoUniversity\\ContosoUniversity\\ContosoUniversity.csproj",
         "projectName": "ContosoUniversity",
-        "projectPath": "C:\\ContosoUniversity\\ContosoUniversity\\ContosoUniversity.csproj",
-        "packagesPath": "C:\\Users\\sandbox-user\\.nuget\\packages\\",
-        "outputPath": "C:\\ContosoUniversity\\ContosoUniversity\\obj\\",
+        "projectPath": "C:\\Users\\ikwak\\Code\\dotnet\\ContosoUniversity\\ContosoUniversity\\ContosoUniversity.csproj",
+        "packagesPath": "C:\\Users\\ikwak\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ikwak\\Code\\dotnet\\ContosoUniversity\\ContosoUniversity\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\sandbox-user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ikwak\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
