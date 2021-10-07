@@ -1,0 +1,18 @@
+# escape=`
+
+ARG WINDOWS_VERSION=
+FROM mcr.microsoft.com/windows/servercore:${WINDOWS_VERSION}
+
+WORKDIR /source
+COPY . /source
+
+RUN msbuild ContosoUniversity.sln /t:restore /p:RestorePackagesConfig=true
+RUN msbuild /p:Configuration=Release `
+	/t:WebPublish `
+	/p:WebPublishMethod=FileSystem `
+	/p:publishUrl=C:\deploy
+
+FROM mcr.microsoft.com/dotnet/framework/aspnet:4.8 AS runtime
+COPY --from=build /deploy /inetpub/wwwroot
+
+EXPOSE 80
